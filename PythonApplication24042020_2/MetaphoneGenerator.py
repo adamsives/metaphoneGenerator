@@ -5,12 +5,16 @@ import jellyfish
 import easygui
 import sys
 
-baseUrl = 'https://api.datamuse.com/words?'
+#URL for homophones
+homophoneBaseUrl = 'https://api.datamuse.com/words?'
 startsWith = 'sp='
 soundsLike = 'sl='
 
-#1. create a list of words to get potential rhymes with as testName[]
+#URL for test names
+nameURL = 'https://randomuser.me/api/?results='
+numPersons = '10'
 
+#1. create a list of words to get potential rhymes with as testName[]
 testNames = []
 potentialMetaphones = []
 #promt user for input test names
@@ -35,7 +39,7 @@ with open(filename) as csvDataFile:
         matchFlag = False
         startingLetterParam = startsWith + name[0:2].lower() + '*&'
         soundsLikeLetterParam = soundsLike + name.lower()
-        url = baseUrl + startingLetterParam + soundsLikeLetterParam
+        url = homophoneBaseUrl + startingLetterParam + soundsLikeLetterParam
        
         # GET potential rhymes
         response = requests.get(url)

@@ -31,6 +31,9 @@
     <Compile Include="MetaphoneGenerator.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="testNameList.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="test1.py">
       <SubType>Code</SubType>
     </Compile>
